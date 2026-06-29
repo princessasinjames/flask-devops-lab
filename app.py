@@ -3,6 +3,7 @@ import os
 import platform
 import socket
 import time
+import datetime
 
 from flask import Flask, jsonify, render_template_string
 app = Flask(__name__)
@@ -34,6 +35,13 @@ def home():
 		name=cfg['app_name'],
 		ver=cfg['version']
 	)
+
+# Returns the current server time in UTC for diagnostics
+@app.get('/api/time')
+def get_time():
+    return jsonify({
+        "current_time": datetime.datetime.utcnow().isoformat() + "Z"
+    })
 
 @app.get('/api/report')
 def report():
