@@ -8,6 +8,6 @@ python app.py
 ```
 
 Endpoints
-- /api/health — Returns a simple JSON response showing the application is running correctly.
+- /api/health — Returns a JSON response showing the application is running correctly.
 - /api/config — Returns the app configuration loaded from config.json, including app name and version.
 - /api/report — Returns runtime system information such as hostname, Python version, and uptime.
